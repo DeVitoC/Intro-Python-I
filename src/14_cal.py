@@ -30,3 +30,16 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+def user_calendar(*cal):
+    if len(sys.argv) == 1:
+        print(calendar.month(2020, 6))
+    elif len(sys.argv) == 2:
+        print(calendar.month(2020, int(sys.argv[1])))
+    elif len(sys.argv) == 3:
+        print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+    else:
+        print("Format should be month an year")
+
+user_calendar()
