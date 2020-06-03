@@ -20,7 +20,7 @@ def f2(*args):
     x = 0
 
     for arg in args:
-        if isinstance(arg, collections.Iterable):
+        if isinstance(arg, collections.abc.Iterable):
             for item in arg:
                 x = x + item
         else:
@@ -61,7 +61,7 @@ print(f3(8))     # Should print 9
 # YOUR CODE HERE
 def f4(*args, **kwargs):
     for arg in args:
-        if isinstance(arg, collections.Iterable):
+        if isinstance(arg, collections.abc.Iterable):
             for key, value in arg.items():
                 print(f"{key}: {value}")
         else:
